@@ -1,121 +1,119 @@
 # Solo Command Reference
-
 ## Table of Contents
 
-* [Root Help Output](#root-help-output)
+- [Root Help Output](#root-help-output)
 
-* [init](#init)
+- [init](#init)
 
-* [account](#account)
+- [account](#account)
 
-  * [account init](#account-init)
+  - [account init](#account-init)
 
-  * [account create](#account-create)
+  - [account create](#account-create)
 
-  * [account update](#account-update)
+  - [account update](#account-update)
 
-  * [account get](#account-get)
+  - [account get](#account-get)
 
-* [cluster](#cluster)
+- [cluster](#cluster)
 
-  * [cluster connect](#cluster-connect)
+  - [cluster connect](#cluster-connect)
 
-  * [cluster list](#cluster-list)
+  - [cluster list](#cluster-list)
 
-  * [cluster info](#cluster-info)
+  - [cluster info](#cluster-info)
 
-  * [cluster setup](#cluster-setup)
+  - [cluster setup](#cluster-setup)
 
-  * [cluster reset](#cluster-reset)
+  - [cluster reset](#cluster-reset)
 
-* [network](#network)
+- [network](#network)
 
-  * [network deploy](#network-deploy)
+  - [network deploy](#network-deploy)
 
-  * [network destroy](#network-destroy)
+  - [network destroy](#network-destroy)
 
-  * [network refresh](#network-refresh)
+  - [network refresh](#network-refresh)
 
-* [node](#node)
+- [node](#node)
 
-  * [node setup](#node-setup)
+  - [node setup](#node-setup)
 
-  * [node start](#node-start)
+  - [node start](#node-start)
 
-  * [node stop](#node-stop)
+  - [node stop](#node-stop)
 
-  * [node keys](#node-keys)
+  - [node keys](#node-keys)
 
-  * [node refresh](#node-refresh)
+  - [node refresh](#node-refresh)
 
-  * [node logs](#node-logs)
+  - [node logs](#node-logs)
 
-  * [node states](#node-states)
+  - [node states](#node-states)
 
-  * [node add](#node-add)
+  - [node add](#node-add)
 
-  * [node add-prepare](#node-add-prepare)
+  - [node add-prepare](#node-add-prepare)
 
-  * [node add-submit-transactions](#node-add-submit-transactions)
+  - [node add-submit-transactions](#node-add-submit-transactions)
 
-  * [node add-execute](#node-add-execute)
+  - [node add-execute](#node-add-execute)
 
-  * [node update](#node-update)
+  - [node update](#node-update)
 
-  * [node update-prepare](#node-update-prepare)
+  - [node update-prepare](#node-update-prepare)
 
-  * [node update-submit-transactions](#node-update-submit-transactions)
+  - [node update-submit-transactions](#node-update-submit-transactions)
 
-  * [node update-execute](#node-update-execute)
+  - [node update-execute](#node-update-execute)
 
-  * [node delete](#node-delete)
+  - [node delete](#node-delete)
 
-  * [node delete-prepare](#node-delete-prepare)
+  - [node delete-prepare](#node-delete-prepare)
 
-  * [node delete-submit-transactions](#node-delete-submit-transactions)
+  - [node delete-submit-transactions](#node-delete-submit-transactions)
 
-  * [node delete-execute](#node-delete-execute)
+  - [node delete-execute](#node-delete-execute)
 
-  * [node prepare-upgrade](#node-prepare-upgrade)
+  - [node prepare-upgrade](#node-prepare-upgrade)
 
-  * [node freeze-upgrade](#node-freeze-upgrade)
+  - [node freeze-upgrade](#node-freeze-upgrade)
 
-  * [node upgrade](#node-upgrade)
+  - [node upgrade](#node-upgrade)
 
-  * [node upgrade-prepare](#node-upgrade-prepare)
+  - [node upgrade-prepare](#node-upgrade-prepare)
 
-  * [node upgrade-submit-transactions](#node-upgrade-submit-transactions)
+  - [node upgrade-submit-transactions](#node-upgrade-submit-transactions)
 
-  * [node upgrade-execute](#node-upgrade-execute)
+  - [node upgrade-execute](#node-upgrade-execute)
 
-  * [node download-generated-files](#node-download-generated-files)
+  - [node download-generated-files](#node-download-generated-files)
 
-* [relay](#relay)
+- [relay](#relay)
 
-  * [relay deploy](#relay-deploy)
+  - [relay deploy](#relay-deploy)
 
-  * [relay destroy](#relay-destroy)
+  - [relay destroy](#relay-destroy)
 
-* [mirror-node](#mirror-node)
+- [mirror-node](#mirror-node)
 
-  * [mirror-node deploy](#mirror-node-deploy)
+  - [mirror-node deploy](#mirror-node-deploy)
 
-  * [mirror-node destroy](#mirror-node-destroy)
+  - [mirror-node destroy](#mirror-node-destroy)
 
-* [explorer](#explorer)
+- [explorer](#explorer)
 
-  * [explorer deploy](#explorer-deploy)
+  - [explorer deploy](#explorer-deploy)
 
-  * [explorer destroy](#explorer-destroy)
+  - [explorer destroy](#explorer-destroy)
 
-* [deployment](#deployment)
+- [deployment](#deployment)
 
-  * [deployment create](#deployment-create)
+  - [deployment create](#deployment-create)
 
-  * [deployment list](#deployment-list)
+  - [deployment list](#deployment-list)
 
 ## Root Help Output
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -143,8 +141,7 @@ Options:
   -v, --version             Show version number                        [boolean]
 ```
 
-## Command: init
-
+## init
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -163,8 +160,7 @@ Options:
   -v, --version             Show version number                        [boolean]
 ```
 
-## Command: account
-
+## account
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -195,7 +191,6 @@ Options:
 ```
 
 ### account init
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -209,7 +204,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
                                                                         [string]
@@ -218,7 +213,6 @@ Options:
 ```
 
 ### account create
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -237,7 +231,7 @@ Options:
       --hbar-amount          Amount of HBAR to add                      [number]
       --create-amount        Amount of new account to create            [number]
       --ecdsa-private-key    ECDSA private key for the Hedera account   [string]
-      --deployment           The name the user will reference locally to link to
+  -d, --deployment           The name the user will reference locally to link to
                               a deployment                              [string]
       --ed25519-private-key  ED25519 private key for the Hedera account [string]
       --generate-ecdsa-key   Generate ECDSA private key for the Hedera account
@@ -249,7 +243,6 @@ Options:
 ```
 
 ### account update
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -267,7 +260,7 @@ Options:
                                                                        [boolean]
       --account-id           The Hedera account id, e.g.: 0.0.1001      [string]
       --hbar-amount          Amount of HBAR to add                      [number]
-      --deployment           The name the user will reference locally to link to
+  -d, --deployment           The name the user will reference locally to link to
                               a deployment                              [string]
       --ecdsa-private-key    ECDSA private key for the Hedera account   [string]
       --ed25519-private-key  ED25519 private key for the Hedera account [string]
@@ -276,7 +269,6 @@ Options:
 ```
 
 ### account get
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -292,14 +284,13 @@ Options:
                                                                        [boolean]
       --account-id          The Hedera account id, e.g.: 0.0.1001       [string]
       --private-key         Show private key information               [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -h, --help                Show help                                  [boolean]
   -v, --version             Show version number                        [boolean]
 ```
 
-## Command: cluster
-
+## cluster
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -326,7 +317,6 @@ Options:
 ```
 
 ### cluster connect
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -340,7 +330,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
   -c, --cluster-ref         The cluster reference that will be used for referenc
@@ -358,7 +348,6 @@ Options:
 ```
 
 ### cluster list
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -377,7 +366,6 @@ Options:
 ```
 
 ### cluster info
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -396,7 +384,6 @@ Options:
 ```
 
 ### cluster setup
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -410,7 +397,7 @@ Options:
       --dev                      Enable developer mode                 [boolean]
       --force-port-forward       Force port forward to access the network servic
                                  es                                    [boolean]
-  -d, --chart-dir                Local chart directory path (e.g. ~/solo-charts/
+      --chart-dir                Local chart directory path (e.g. ~/solo-charts/
                                  charts                                 [string]
   -c, --cluster-ref              The cluster reference that will be used for ref
                                  erencing the Kubernetes cluster and stored in t
@@ -431,7 +418,6 @@ Options:
 ```
 
 ### cluster reset
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -459,8 +445,7 @@ Options:
   -v, --version                  Show version number                   [boolean]
 ```
 
-## Command: network
-
+## network
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -486,7 +471,6 @@ Options:
 ```
 
 ### network deploy
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -515,7 +499,7 @@ Options:
                                    is                                   [string]
       --cache-dir                  Local cache directory                [string]
   -l, --ledger-id                  Ledger ID (a.k.a. Chain ID)          [string]
-  -d, --chart-dir                  Local chart directory path (e.g. ~/solo-chart
+      --chart-dir                  Local chart directory path (e.g. ~/solo-chart
                                    s/charts                             [string]
       --prometheus-svc-monitor     Enable prometheus service monitor for the net
                                    work nodes                          [boolean]
@@ -525,7 +509,7 @@ Options:
       --load-balancer              Enable load balancer for network node proxies
                                                                        [boolean]
       --log4j2-xml                 log4j2.xml file for node             [string]
-      --deployment                 The name the user will reference locally to l
+  -d, --deployment                 The name the user will reference locally to l
                                    ink to a deployment                  [string]
   -i, --node-aliases               Comma separated node aliases (empty means all
                                     nodes)                              [string]
@@ -585,7 +569,6 @@ Options:
 ```
 
 ### network destroy
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -603,7 +586,7 @@ Options:
       --delete-secrets      Delete the network secrets                 [boolean]
       --enable-timeout      enable time out for running a command      [boolean]
   -f, --force               Force actions even if those can be skipped [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
   -h, --help                Show help                                  [boolean]
@@ -611,7 +594,6 @@ Options:
 ```
 
 ### network refresh
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -638,7 +620,7 @@ Options:
                                    is                                   [string]
       --cache-dir                  Local cache directory                [string]
   -l, --ledger-id                  Ledger ID (a.k.a. Chain ID)          [string]
-  -d, --chart-dir                  Local chart directory path (e.g. ~/solo-chart
+      --chart-dir                  Local chart directory path (e.g. ~/solo-chart
                                    s/charts                             [string]
       --prometheus-svc-monitor     Enable prometheus service monitor for the net
                                    work nodes                          [boolean]
@@ -648,7 +630,7 @@ Options:
       --load-balancer              Enable load balancer for network node proxies
                                                                        [boolean]
       --log4j2-xml                 log4j2.xml file for node             [string]
-      --deployment                 The name the user will reference locally to l
+  -d, --deployment                 The name the user will reference locally to l
                                    ink to a deployment                  [string]
   -i, --node-aliases               Comma separated node aliases (empty means all
                                     nodes)                              [string]
@@ -707,8 +689,7 @@ Options:
   -v, --version                    Show version number                 [boolean]
 ```
 
-## Command: node
-
+## node
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -776,7 +757,6 @@ Options:
 ```
 
 ### node setup
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -791,7 +771,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --app                 Testing app name                            [string]
@@ -808,7 +788,6 @@ Options:
 ```
 
 ### node start
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -822,7 +801,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --app                 Testing app name                            [string]
@@ -841,7 +820,6 @@ Options:
 ```
 
 ### node stop
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -855,7 +833,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
                                                                         [string]
@@ -865,7 +843,6 @@ Options:
 ```
 
 ### node keys
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -882,7 +859,7 @@ Options:
       --cache-dir           Local cache directory                       [string]
       --gossip-keys         Generate gossip keys for nodes             [boolean]
       --tls-keys            Generate gRPC TLS keys for nodes           [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
@@ -892,7 +869,6 @@ Options:
 ```
 
 ### node refresh
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -907,7 +883,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
                                                                         [string]
@@ -920,7 +896,6 @@ Options:
 ```
 
 ### node logs
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -935,7 +910,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
                                                                         [string]
@@ -945,7 +920,6 @@ Options:
 ```
 
 ### node states
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -960,7 +934,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
                                                                         [string]
@@ -970,7 +944,6 @@ Options:
 ```
 
 ### node add
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -988,7 +961,7 @@ Options:
       --endpoint-type       Endpoint type (IP or FQDN)                  [string]
       --gossip-keys         Generate gossip keys for nodes             [boolean]
       --tls-keys            Generate gRPC TLS keys for nodes           [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --app                 Testing app name                            [string]
@@ -1016,7 +989,7 @@ Options:
                             8)                                          [string]
   -f, --force               Force actions even if those can be skipped [boolean]
       --local-build-path    path of hedera local repo                   [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --admin-key           Admin key                                   [string]
@@ -1031,7 +1004,6 @@ Options:
 ```
 
 ### node add-prepare
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1049,7 +1021,7 @@ Options:
       --endpoint-type       Endpoint type (IP or FQDN)                  [string]
       --gossip-keys         Generate gossip keys for nodes             [boolean]
       --tls-keys            Generate gRPC TLS keys for nodes           [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --output-dir          Path to the directory where the command context will
@@ -1079,7 +1051,7 @@ Options:
                             8)                                          [string]
   -f, --force               Force actions even if those can be skipped [boolean]
       --local-build-path    path of hedera local repo                   [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --admin-key           Admin key                                   [string]
@@ -1088,7 +1060,6 @@ Options:
 ```
 
 ### node add-submit-transactions
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1106,7 +1077,7 @@ Options:
       --endpoint-type       Endpoint type (IP or FQDN)                  [string]
       --gossip-keys         Generate gossip keys for nodes             [boolean]
       --tls-keys            Generate gRPC TLS keys for nodes           [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --input-dir           Path to the directory where the command context will
@@ -1136,7 +1107,7 @@ Options:
                             8)                                          [string]
   -f, --force               Force actions even if those can be skipped [boolean]
       --local-build-path    path of hedera local repo                   [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
   -h, --help                Show help                                  [boolean]
@@ -1144,7 +1115,6 @@ Options:
 ```
 
 ### node add-execute
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1162,7 +1132,7 @@ Options:
       --endpoint-type       Endpoint type (IP or FQDN)                  [string]
       --gossip-keys         Generate gossip keys for nodes             [boolean]
       --tls-keys            Generate gRPC TLS keys for nodes           [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --input-dir           Path to the directory where the command context will
@@ -1192,7 +1162,7 @@ Options:
                             8)                                          [string]
   -f, --force               Force actions even if those can be skipped [boolean]
       --local-build-path    path of hedera local repo                   [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --haproxy-ips         IP mapping where key = value is node alias and stati
@@ -1206,7 +1176,6 @@ Options:
 ```
 
 ### node update
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1221,7 +1190,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --node-alias          Node alias (e.g. node99)                    [string]
@@ -1241,7 +1210,7 @@ Options:
                             sip in PEM key format to be used            [string]
       --tls-private-key     path and file name of the private TLS key to be used
                                                                         [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --local-build-path    path of hedera local repo                   [string]
@@ -1255,7 +1224,6 @@ Options:
 ```
 
 ### node update-prepare
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1271,7 +1239,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --output-dir          Path to the directory where the command context will
@@ -1293,7 +1261,7 @@ Options:
                             sip in PEM key format to be used            [string]
       --tls-private-key     path and file name of the private TLS key to be used
                                                                         [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --local-build-path    path of hedera local repo                   [string]
@@ -1307,7 +1275,6 @@ Options:
 ```
 
 ### node update-submit-transactions
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1323,7 +1290,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --input-dir           Path to the directory where the command context will
@@ -1333,7 +1300,7 @@ Options:
                             ode id                                      [string]
       --endpoint-type       Endpoint type (IP or FQDN)                  [string]
       --solo-chart-version  Solo testing chart version                  [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --local-build-path    path of hedera local repo                   [string]
@@ -1347,7 +1314,6 @@ Options:
 ```
 
 ### node update-execute
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1362,7 +1328,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --input-dir           Path to the directory where the command context will
@@ -1372,7 +1338,7 @@ Options:
                             ode id                                      [string]
       --endpoint-type       Endpoint type (IP or FQDN)                  [string]
       --solo-chart-version  Solo testing chart version                  [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --local-build-path    path of hedera local repo                   [string]
@@ -1386,7 +1352,6 @@ Options:
 ```
 
 ### node delete
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1401,7 +1366,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
       --node-alias          Node alias (e.g. node99)                    [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
@@ -1414,14 +1379,13 @@ Options:
   -f, --force               Force actions even if those can be skipped [boolean]
       --local-build-path    path of hedera local repo                   [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -h, --help                Show help                                  [boolean]
   -v, --version             Show version number                        [boolean]
 ```
 
 ### node delete-prepare
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1436,7 +1400,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
       --node-alias          Node alias (e.g. node99)                    [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
@@ -1451,14 +1415,13 @@ Options:
   -f, --force               Force actions even if those can be skipped [boolean]
       --local-build-path    path of hedera local repo                   [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -h, --help                Show help                                  [boolean]
   -v, --version             Show version number                        [boolean]
 ```
 
 ### node delete-submit-transactions
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1473,7 +1436,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
       --node-alias          Node alias (e.g. node99)                    [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
@@ -1488,14 +1451,13 @@ Options:
   -f, --force               Force actions even if those can be skipped [boolean]
       --local-build-path    path of hedera local repo                   [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -h, --help                Show help                                  [boolean]
   -v, --version             Show version number                        [boolean]
 ```
 
 ### node delete-execute
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1510,7 +1472,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
       --node-alias          Node alias (e.g. node99)                    [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
@@ -1525,14 +1487,13 @@ Options:
   -f, --force               Force actions even if those can be skipped [boolean]
       --local-build-path    path of hedera local repo                   [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -h, --help                Show help                                  [boolean]
   -v, --version             Show version number                        [boolean]
 ```
 
 ### node prepare-upgrade
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1546,7 +1507,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
       --cache-dir           Local cache directory                       [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
@@ -1556,7 +1517,6 @@ Options:
 ```
 
 ### node freeze-upgrade
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1571,7 +1531,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
       --cache-dir           Local cache directory                       [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
@@ -1581,7 +1541,6 @@ Options:
 ```
 
 ### node upgrade
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1596,7 +1555,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --upgrade-zip-file    A zipped file used for network upgrade      [string]
@@ -1606,7 +1565,7 @@ Options:
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
                                                                         [string]
       --solo-chart-version  Solo testing chart version                  [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --local-build-path    path of hedera local repo                   [string]
@@ -1616,7 +1575,6 @@ Options:
 ```
 
 ### node upgrade-prepare
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1631,7 +1589,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --upgrade-zip-file    A zipped file used for network upgrade      [string]
@@ -1643,7 +1601,7 @@ Options:
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
                                                                         [string]
       --solo-chart-version  Solo testing chart version                  [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --local-build-path    path of hedera local repo                   [string]
@@ -1653,7 +1611,6 @@ Options:
 ```
 
 ### node upgrade-submit-transactions
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1668,7 +1625,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --input-dir           Path to the directory where the command context will
@@ -1679,7 +1636,7 @@ Options:
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
                                                                         [string]
       --solo-chart-version  Solo testing chart version                  [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --local-build-path    path of hedera local repo                   [string]
@@ -1689,7 +1646,6 @@ Options:
 ```
 
 ### node upgrade-execute
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1704,7 +1660,7 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
       --cache-dir           Local cache directory                       [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
       --input-dir           Path to the directory where the command context will
@@ -1715,7 +1671,7 @@ Options:
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
                                                                         [string]
       --solo-chart-version  Solo testing chart version                  [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
       --local-build-path    path of hedera local repo                   [string]
@@ -1725,7 +1681,6 @@ Options:
 ```
 
 ### node download-generated-files
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1739,7 +1694,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
       --cache-dir           Local cache directory                       [string]
   -t, --release-tag         Release tag to be used (e.g. v0.58.10)      [string]
@@ -1748,8 +1703,7 @@ Options:
   -v, --version             Show version number                        [boolean]
 ```
 
-## Command: relay
-
+## relay
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1772,7 +1726,6 @@ Options:
 ```
 
 ### relay deploy
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1787,14 +1740,14 @@ Options:
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
   -l, --ledger-id           Ledger ID (a.k.a. Chain ID)                 [string]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -c, --cluster-ref         The cluster reference that will be used for referenc
                             ing the Kubernetes cluster and stored in the local a
                             nd remote configuration for the deployment.  For com
                             mands that take multiple clusters they can be separa
                             ted by commas.                              [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
                                                                         [string]
@@ -1813,7 +1766,6 @@ Options:
 ```
 
 ### relay destroy
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1827,9 +1779,9 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
   -i, --node-aliases        Comma separated node aliases (empty means all nodes)
@@ -1838,8 +1790,7 @@ Options:
   -v, --version             Show version number                        [boolean]
 ```
 
-## Command: mirror-node
-
+## mirror-node
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1862,7 +1813,6 @@ Options:
 ```
 
 ### mirror-node deploy
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1883,9 +1833,9 @@ Options:
                                            commands that take multiple clusters
                                           they can be separated by commas.
                                                                         [string]
-  -d, --chart-dir                         Local chart directory path (e.g. ~/sol
+      --chart-dir                         Local chart directory path (e.g. ~/sol
                                           o-charts/charts               [string]
-      --deployment                        The name the user will reference local
+  -d, --deployment                        The name the user will reference local
                                           ly to link to a deployment    [string]
       --profile-file                      Resource profile definition (e.g. cust
                                           om-spec.yaml)                 [string]
@@ -1937,7 +1887,6 @@ Options:
 ```
 
 ### mirror-node destroy
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1951,7 +1900,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -c, --cluster-ref         The cluster reference that will be used for referenc
                             ing the Kubernetes cluster and stored in the local a
@@ -1960,14 +1909,13 @@ Options:
                             ted by commas.                              [string]
   -f, --force               Force actions even if those can be skipped [boolean]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -h, --help                Show help                                  [boolean]
   -v, --version             Show version number                        [boolean]
 ```
 
-## Command: explorer
-
+## explorer
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -1990,7 +1938,6 @@ Options:
 ```
 
 ### explorer deploy
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -2004,7 +1951,7 @@ Options:
       --dev                            Enable developer mode           [boolean]
       --force-port-forward             Force port forward to access the network
                                        services                        [boolean]
-  -d, --chart-dir                      Local chart directory path (e.g. ~/solo-c
+      --chart-dir                      Local chart directory path (e.g. ~/solo-c
                                        harts/charts                     [string]
   -c, --cluster-ref                    The cluster reference that will be used f
                                        or referencing the Kubernetes cluster and
@@ -2029,7 +1976,7 @@ Options:
       --mirror-static-ip               static IP address for the mirror node
                                                                         [string]
   -n, --namespace                      Namespace                        [string]
-      --deployment                     The name the user will reference locally
+  -d, --deployment                     The name the user will reference locally
                                        to link to a deployment          [string]
       --profile-file                   Resource profile definition (e.g. custom-
                                        spec.yaml)                       [string]
@@ -2049,7 +1996,6 @@ Options:
 ```
 
 ### explorer destroy
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -2063,7 +2009,7 @@ Options:
       --dev                 Enable developer mode                      [boolean]
       --force-port-forward  Force port forward to access the network services
                                                                        [boolean]
-  -d, --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
+      --chart-dir           Local chart directory path (e.g. ~/solo-charts/chart
                             s                                           [string]
   -c, --cluster-ref         The cluster reference that will be used for referenc
                             ing the Kubernetes cluster and stored in the local a
@@ -2072,14 +2018,13 @@ Options:
                             ted by commas.                              [string]
   -f, --force               Force actions even if those can be skipped [boolean]
   -q, --quiet-mode          Quiet mode, do not prompt for confirmation [boolean]
-      --deployment          The name the user will reference locally to link to
+  -d, --deployment          The name the user will reference locally to link to
                             a deployment                                [string]
   -h, --help                Show help                                  [boolean]
   -v, --version             Show version number                        [boolean]
 ```
 
-## Command: deployment
-
+## deployment
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -2102,7 +2047,6 @@ Options:
 ```
 
 ### deployment create
-
 ```
 
 > @hashgraph/solo@0.35.0 solo
@@ -2127,7 +2071,7 @@ Options:
                              parated by commas.                         [string]
       --email                User email address used for local configuration
                                                                         [string]
-      --deployment           The name the user will reference locally to link to
+  -d, --deployment           The name the user will reference locally to link to
                               a deployment                              [string]
       --deployment-clusters  Solo deployment cluster list (comma separated)
                                                                         [string]
@@ -2138,7 +2082,6 @@ Options:
 ```
 
 ### deployment list
-
 ```
 
 > @hashgraph/solo@0.35.0 solo

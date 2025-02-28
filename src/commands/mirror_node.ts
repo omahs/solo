@@ -1,7 +1,8 @@
 /**
  * SPDX-License-Identifier: Apache-2.0
  */
-import {ListrEnquirerPromptAdapter} from '@listr2/prompt-adapter-enquirer';
+import {ListrInquirerPromptAdapter} from '@listr2/prompt-adapter-inquirer';
+import {confirm as confirmPrompt} from '@inquirer/prompts';
 import {Listr} from 'listr2';
 import {IllegalArgumentError, MissingArgumentError, SoloError} from '../core/errors.js';
 import * as constants from '../core/constants.js';
@@ -31,7 +32,7 @@ import {PvcName} from '../core/kube/resources/pvc/pvc_name.js';
 import {type ClusterRef, type DeploymentName} from '../core/config/remote/types.js';
 import {extractContextFromConsensusNodes} from '../core/helpers.js';
 
-interface MirrorNodeDeployConfigClass {
+export interface MirrorNodeDeployConfigClass {
   chartDirectory: string;
   clusterContext: string;
   namespace: NamespaceName;
@@ -48,8 +49,8 @@ interface MirrorNodeDeployConfigClass {
   operatorKey: string;
   useExternalDatabase: boolean;
   storageType: constants.StorageType;
-  storageAccessKey: string;
-  storageSecrets: string;
+  storageReadAccessKey: string;
+  storageReadSecrets: string;
   storageEndpoint: string;
   storageBucket: string;
   storageBucketPrefix: string;
@@ -60,7 +61,7 @@ interface MirrorNodeDeployConfigClass {
   externalDatabaseReadonlyPassword: Optional<string>;
 }
 
-interface Context {
+export interface Context {
   config: MirrorNodeDeployConfigClass;
   addressBook: string;
 }
@@ -99,8 +100,8 @@ export class MirrorNodeCommand extends BaseCommand {
       flags.operatorId,
       flags.operatorKey,
       flags.storageType,
-      flags.storageAccessKey,
-      flags.storageSecrets,
+      flags.storageReadAccessKey,
+      flags.storageReadSecrets,
       flags.storageEndpoint,
       flags.storageBucket,
       flags.storageBucketPrefix,
@@ -136,8 +137,8 @@ export class MirrorNodeCommand extends BaseCommand {
     let storageType = '';
     if (
       config.storageType !== constants.StorageType.MINIO_ONLY &&
-      config.storageAccessKey &&
-      config.storageSecrets &&
+      config.storageReadAccessKey &&
+      config.storageReadSecrets &&
       config.storageEndpoint
     ) {
       if (
@@ -152,8 +153,8 @@ export class MirrorNodeCommand extends BaseCommand {
       }
       valuesArg += ` --set importer.env.HEDERA_MIRROR_IMPORTER_DOWNLOADER_SOURCES_0_TYPE=${storageType}`;
       valuesArg += ` --set importer.env.HEDERA_MIRROR_IMPORTER_DOWNLOADER_SOURCES_0_URI=${config.storageEndpoint}`;
-      valuesArg += ` --set importer.env.HEDERA_MIRROR_IMPORTER_DOWNLOADER_SOURCES_0_CREDENTIALS_ACCESSKEY=${config.storageAccessKey}`;
-      valuesArg += ` --set importer.env.HEDERA_MIRROR_IMPORTER_DOWNLOADER_SOURCES_0_CREDENTIALS_SECRETKEY=${config.storageSecrets}`;
+      valuesArg += ` --set importer.env.HEDERA_MIRROR_IMPORTER_DOWNLOADER_SOURCES_0_CREDENTIALS_ACCESSKEY=${config.storageReadAccessKey}`;
+      valuesArg += ` --set importer.env.HEDERA_MIRROR_IMPORTER_DOWNLOADER_SOURCES_0_CREDENTIALS_SECRETKEY=${config.storageReadSecrets}`;
     }
 
     // if the useExternalDatabase populate all the required values before installing the chart
@@ -632,13 +633,12 @@ export class MirrorNodeCommand extends BaseCommand {
           title: 'Initialize',
           task: async (ctx, task) => {
             if (!argv.force) {
-              const confirm = await task.prompt(ListrEnquirerPromptAdapter).run({
-                type: 'toggle',
+              const confirmResult = await task.prompt(ListrInquirerPromptAdapter).run(confirmPrompt, {
                 default: false,
                 message: 'Are you sure you would like to destroy the mirror-node components?',
               });
 
-              if (!confirm) {
+              if (!confirmResult) {
                 process.exit(0);
               }
             }
